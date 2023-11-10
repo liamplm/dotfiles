@@ -1,0 +1,26 @@
+[/]
+audible-bell=true
+background-color='#0B0E14'
+background-transparency-percent=0
+bold-color='#73B8FF'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='#BFBDB6'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='#D95757'
+custom-command='/usr/bin/zsh'
+font='JetBrainsMono Nerd Font Medium 12'
+foreground-color='#BFBDB6'
+highlight-background-color='#BFBDB6'
+highlight-colors-set=true
+highlight-foreground-color='#0B0E14'
+login-shell=false
+palette=['#0B0E14', '#D95757', '#AAD94C', '#E6B450', '#73B8FF', '#6C5980', '#95E6CB', '#BFBDB6', '#BFBDB6', '#F07178', '#7FD962', '#FFB454', '#59C2FF', '#D2A6FF', '#95E6CB', '#0D1017']
+scrollbar-policy='never'
+use-custom-command=true
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Mine'

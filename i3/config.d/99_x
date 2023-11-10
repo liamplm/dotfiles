@@ -1,0 +1,49 @@
+for_window [title="Picture-in-Picture"] sticky enable
+
+assign [class="firefox"] 2
+assign [class="Google-chrome"] 2
+assign [class="nekoray"] 3
+assign [class="TelegramDesktop"] 4
+assign [class="steam"] 8
+assign [class="Spotify"] 9
+
+bindsym $mod+shift+n resize set width 600 px height 338 px
+floating_maximum_size 1250 x 700
+
+# open application launcher
+# bindsym $mod+d exec --no-startup-id ilia -p apps -t /usr/share/regolith-look/i3-default/ilia.css
+bindsym $mod+d exec --no-startup-id /home/liamplm/.config/polybar/grayblocks/scripts/launcher.sh
+bindsym $mod+g exec --no-startup-id google-chrome
+bindsym $mod+t exec --no-startup-id telegram-desktop
+bindsym $mod+n exec --no-startup-id nautilus
+bindsym $mod+m exec --no-startup-id spotify
+bindsym $mod+shift+v exec --no-startup-id sudo /home/liamplm/programs/nekoray-3.19-2023-08-30-linux-x64.AppImage
+
+exec_always --no-startup-id /home/liamplm/.config/polybar/grayblocks/launch.sh
+
+focus_follows_mouse on
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout toggle stacking splitv
+bindsym $mod+w layout toggle tabbed splith
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Ctrl+space sticky toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+b exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+k exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+hide_edge_borders smart

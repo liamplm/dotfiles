@@ -4,6 +4,7 @@
 - NeoVIM (based on NVChad)
 - Polybar (based on polybar-themes)
 - Gnome terminal
+- TMUX
 
 
 ## i3
@@ -16,3 +17,10 @@
 ## Polybar
 - Path: `~/.config/polybar`
 - Repo: https://github.com/adi1090x/polybar-themes/commit/9722227ec3e5d0b1a39faefad7506f0fccb2bb38
+
+## Gnome terminal
+- Export / Import: https://gist.github.com/fdaciuk/9ec4d8afc32063a6f74a21f8308e3807
+
+## TMUX
+- Path: `~/.tmux.conf`
+- Instam TPM: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`

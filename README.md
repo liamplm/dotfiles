@@ -5,6 +5,7 @@
 - Polybar (based on polybar-themes)
 - Gnome terminal
 - TMUX
+- ZSH
 
 
 ## i3
@@ -24,3 +25,6 @@
 ## TMUX
 - Path: `~/.tmux.conf`
 - Instam TPM: `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
+## ZSH
+- Path: `~/.zshrc`

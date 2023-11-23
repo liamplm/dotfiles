@@ -142,28 +142,28 @@ M.lspconfig = {
             "lsp references",
         },
 
-        ["<leader>f"] = {
+        ["<leader>ef"] = {
             function()
                 vim.diagnostic.open_float()
             end,
             "floating diagnostic",
         },
 
-        ["[d"] = {
+        ["e["] = {
             function()
                 vim.diagnostic.goto_prev()
             end,
             "goto prev",
         },
 
-        ["d]"] = {
+        ["e]"] = {
             function()
                 vim.diagnostic.goto_next()
             end,
             "goto_next",
         },
 
-        ["<leader>q"] = {
+        ["<leader>ee"] = {
             function()
                 vim.diagnostic.setloclist()
             end,
@@ -229,10 +229,10 @@ M.telescope = {
 M.gitsigns = {
     n = {
         -- Navigation through hunks
-        ["]c"] = {
+        ["c]"] = {
             function()
                 if vim.wo.diff then
-                    return "]c"
+                    return "c]"
                 end
                 vim.schedule(function()
                     require("gitsigns").next_hunk()
@@ -240,13 +240,13 @@ M.gitsigns = {
                 return "<Ignore>"
             end,
             "Jump to next hunk",
-            opts = { expr = true },
+            -- opts = { expr = true },
         },
 
-        ["[c"] = {
+        ["c["] = {
             function()
                 if vim.wo.diff then
-                    return "[c"
+                    return "c["
                 end
                 vim.schedule(function()
                     require("gitsigns").prev_hunk()

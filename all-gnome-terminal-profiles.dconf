@@ -1,0 +1,86 @@
+[/]
+default='ec9cfc03-11da-4c9f-9b29-263a2f4733e9'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'ec9cfc03-11da-4c9f-9b29-263a2f4733e9', 'e4e44c8d-b96b-48b2-87a3-329d6cd1f6c1', 'bd9a3663-14e1-4286-ab36-58a4ad5bfe36']
+
+[:bd9a3663-14e1-4286-ab36-58a4ad5bfe36]
+audible-bell=false
+background-color='#282828'
+background-transparency-percent=0
+bold-color='#458588'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='#a89984'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='#cc241d'
+custom-command='/usr/bin/zsh'
+font='Cousine Nerd Font 12'
+foreground-color='#bdae93'
+highlight-background-color='#a89984'
+highlight-colors-set=true
+highlight-foreground-color='#282828'
+login-shell=false
+nord-gnome-terminal-version='0.1.0'
+palette=['#282828', '#cc241d', '#98971a', '#d79921', '#458588', '#d3869b', '#689d6a', '#bdae93', '#a89984', '#cc241d', '#98971a', '#d79921', '#458588', '#b16286', '#689d6a', '#d5c4a1']
+scrollbar-policy='never'
+use-custom-command=true
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Regolith'
+
+[:e4e44c8d-b96b-48b2-87a3-329d6cd1f6c1]
+audible-bell=true
+background-color='#0B0E14'
+background-transparency-percent=0
+bold-color='#73B8FF'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='#BFBDB6'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='#D95757'
+custom-command='/usr/bin/zsh'
+font='icomoon-feather 12'
+foreground-color='#BFBDB6'
+highlight-background-color='#BFBDB6'
+highlight-colors-set=true
+highlight-foreground-color='#0B0E14'
+login-shell=false
+palette=['#0B0E14', '#D95757', '#AAD94C', '#E6B450', '#73B8FF', '#6C5980', '#95E6CB', '#BFBDB6', '#BFBDB6', '#F07178', '#7FD962', '#FFB454', '#59C2FF', '#D2A6FF', '#95E6CB', '#0D1017']
+scrollbar-policy='never'
+use-custom-command=true
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Mine (Copy)'
+
+[:ec9cfc03-11da-4c9f-9b29-263a2f4733e9]
+audible-bell=true
+background-color='#0B0E14'
+background-transparency-percent=0
+bold-color='#73B8FF'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='#BFBDB6'
+cursor-blink-mode='off'
+cursor-colors-set=true
+cursor-foreground-color='#D95757'
+custom-command='/usr/bin/zsh'
+font='JetBrainsMono Nerd Font Medium 12'
+foreground-color='#BFBDB6'
+highlight-background-color='#BFBDB6'
+highlight-colors-set=true
+highlight-foreground-color='#0B0E14'
+login-shell=false
+palette=['#0B0E14', '#D95757', '#AAD94C', '#E6B450', '#73B8FF', '#6C5980', '#95E6CB', '#BFBDB6', '#BFBDB6', '#F07178', '#7FD962', '#FFB454', '#59C2FF', '#D2A6FF', '#95E6CB', '#0D1017']
+scrollbar-policy='never'
+use-custom-command=true
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=false
+visible-name='Mine'

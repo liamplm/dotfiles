@@ -149,14 +149,14 @@ M.lspconfig = {
             "floating diagnostic",
         },
 
-        ["e["] = {
+        ["<leader>e["] = {
             function()
                 vim.diagnostic.goto_prev()
             end,
             "goto prev",
         },
 
-        ["e]"] = {
+        ["<leader>e]"] = {
             function()
                 vim.diagnostic.goto_next()
             end,

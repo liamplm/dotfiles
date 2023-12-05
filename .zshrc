@@ -150,3 +150,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export CAPACITOR_ANDROID_STUDIO_PATH=/snap/bin/android-studio
 alias qr="qrencode -t ansiutf8"
 alias pn="ping 8.8.8.8"
+alias lstty="pio device list"
+alias sdate="date +%Y-%m-%d,%H:%M:%S"

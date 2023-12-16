@@ -1,6 +1,37 @@
 ---@type MappingsTable
 local M = {}
 
+local confirm = function(callback, msg)
+    vim.ui.select({ "No", "No", "Yes" }, {
+        prompt = msg or "Are you sure ?",
+    }, function(choice)
+        if choice ~= nil and choice == "Yes" then
+            vim.schedule(callback)
+        end
+    end)
+end
+
+local selectOption = function(opts, title)
+    vim.ui.select(opts, {
+        prompt = title or "Select Git actions:",
+        format_item = function(item)
+            return item[1]
+        end,
+    }, function(choice)
+        if choice == nil then
+            return
+        end
+        -- print(choice[1])
+        -- print(string.find(string.lower(choice[1]), "[unsafe]"))
+        --       if string.find(string.lower(choice[1]), "[unsafe]") then
+        -- 	confirm(choice[2])
+        -- 	return
+        --       end
+
+        vim.schedule(choice[2])
+    end)
+end
+
 -- M.general = {
 --   n = {
 --     [";"] = { ":", "enter command mode", opts = { nowait = true } },
@@ -26,23 +57,32 @@ M.disabled = {
         ["<C-j>"] = "",
         ["<C-k>"] = "",
         ["<C-l>"] = "",
-    }
+    },
 }
 
 M.general = {
     n = {
-        ["<leader>y"] = { "\"+y", "copy to clipboard" },
-        ["<leader>p"] = { "\"+p", "paste from clipboard" },
+        ["<leader>y"] = { '"+y', "copy to clipboard" },
+        ["<leader>p"] = { '"+p', "paste from clipboard" },
         ["<C-c>"] = {
             function()
                 require("nvchad_ui.tabufline").close_buffer()
             end,
             "close buffer",
         },
+        ["<leader>cls"] = {
+            function()
+                local pos = vim.api.nvim_win_get_cursor(0)[2]
+                local line = vim.api.nvim_get_current_line()
+                local nline = line:sub(0, pos) .. "%h -x c++-header" .. line:sub(pos + 1)
+                vim.api.nvim_set_current_line(nline)
+            end,
+            "Insert somthing",
+        },
     },
     v = {
-        ["<leader>y"] = { "\"+y", "copy to clipboard" },
-        ["<leader>p"] = { "\"+p", "paste from clipboard" },
+        ["<leader>y"] = { '"+y', "copy to clipboard" },
+        ["<leader>p"] = { '"+p', "paste from clipboard" },
     },
 }
 
@@ -225,7 +265,6 @@ M.telescope = {
     },
 }
 
-
 M.gitsigns = {
     n = {
         -- Navigation through hunks
@@ -265,7 +304,7 @@ M.gitsigns = {
             "Reset hunk",
         },
 
-        ["<leader>R"] = {
+        ["<leader>gp"] = {
             function()
                 require("gitsigns").preview_hunk()
             end,
@@ -279,31 +318,81 @@ M.gitsigns = {
             "Blame line",
         },
 
-        ["<leader>td"] = {
+        ["<leader>cd"] = {
             function()
                 require("gitsigns").toggle_deleted()
             end,
             "Toggle deleted",
         },
+        ["<leader>gg"] = {
+            function()
+                local gs = require "gitsigns"
+
+                selectOption {
+                    { "Diff this", gs.diffthis },
+                    { "Preview hunk", gs.preview_hunk },
+                    { "Stage this buffer", gs.stage_buffer },
+                    {
+                        "[Unsafe] Revert this buffer",
+                        function()
+                            confirm(gs.reset_buffer)
+                        end,
+                    },
+                    { "Stage hunk", gs.stage_hunk },
+                    {
+                        "[Unsafe] Revert hunk",
+                        function()
+                            confirm(gs.reset_hunk)
+                        end,
+                    },
+                }
+            end,
+            "Git action",
+        },
+    },
+    v = {
+        ["<leader>gg"] = {
+            function()
+                local gs = require "gitsigns"
+
+                selectOption {
+                    {
+                        "Stage hunk",
+                        function()
+                            gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+                        end,
+                    },
+                    {
+                        "[Unsafe] Revert hunk",
+                        function()
+                            confirm(function()
+                                gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+                            end)
+                        end,
+                    },
+                }
+            end,
+            "Git action",
+        },
     },
 }
 
 M.whichkey = {
-  n = {
-    ["<leader>wk"] = {
-      function()
-        vim.cmd "WhichKey"
-      end,
-      "Which-key all keymaps",
+    n = {
+        ["<leader>wk"] = {
+            function()
+                vim.cmd "WhichKey"
+            end,
+            "Which-key all keymaps",
+        },
+        ["<leader>wK"] = {
+            function()
+                local input = vim.fn.input "WhichKey: "
+                vim.cmd("WhichKey " .. input)
+            end,
+            "Which-key query lookup",
+        },
     },
-    ["<leader>wK"] = {
-      function()
-        local input = vim.fn.input "WhichKey: "
-        vim.cmd("WhichKey " .. input)
-      end,
-      "Which-key query lookup",
-    },
-  },
 }
 
 return M

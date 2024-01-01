@@ -152,6 +152,9 @@ export CAPACITOR_ANDROID_STUDIO_PATH=/snap/bin/android-studio
 export MASON="$HOME/.local/share/nvim/mason"
 export PATH="$MASON/bin:$PATH"
 
+export GO_INSTALL="$HOME/programs/go"
+export PATH="$GO_INSTALL/bin:$PATH"
+
 alias qr="qrencode -t ansiutf8"
 alias pn="ping 8.8.8.8"
 alias lstty="pio device list"

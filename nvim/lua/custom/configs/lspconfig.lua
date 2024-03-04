@@ -15,6 +15,7 @@ local servers = {
     "tailwindcss",
     "docker_compose_language_service",
     "dockerls",
+    "rust_analyzer",
 }
 
 for _, lsp in ipairs(servers) do
@@ -81,7 +82,7 @@ local server_config = {
         --         or util.find_git_ancestor(fname)
     end,
     init_options = {
-        compilationDatabaseDirectory = "build",
+        -- compilationDatabaseDirectory = "build",
         -- compilationDatabaseDirectory = ".pio/build/esp32cam";
         cache = {
             directory = "/home/liamplm/.cache/ccls/",

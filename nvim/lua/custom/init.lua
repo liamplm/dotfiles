@@ -77,6 +77,13 @@ opt.backspace = "indent,eol,start"
 -- Persian support
 opt.termbidi = true
 
+-- Folding
+-- opt.foldmethod = "indent"
+opt.foldmethod = "expr"
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldenable = false
+opt.foldnestmax = 3
+
 opt.clipboard = nil
 -- opt.clipboard = "unnamed"
 -- opt.clipboard = "unnamed,unnamedplus"

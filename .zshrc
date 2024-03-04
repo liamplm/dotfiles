@@ -159,4 +159,6 @@ alias qr="qrencode -t ansiutf8"
 alias pn="ping 8.8.8.8"
 alias lstty="pio device list"
 alias sdate="date +%Y-%m-%d,%H:%M:%S"
+alias lss="ls -lthr --sort size"
+
 . "/home/liamplm/.acme.sh/acme.sh.env"

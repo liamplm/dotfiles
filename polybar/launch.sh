@@ -12,4 +12,13 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bar
 # polybar -q main -c "$DIR"/config.ini &
-polybar -q top -c "$DIR"/preview.ini &
+# polybar -q top -c "$DIR"/preview.ini &
+
+if type "xrandr"; then
+    for m in $(xrandr --query | grep " connected" | cut -d" " -f1 | tac); do
+        echo $m
+        MONITOR=$m polybar -q top -c "$DIR"/preview.ini &
+    done
+else
+  polybar -q top -c "$DIR"/preview.ini &
+fi

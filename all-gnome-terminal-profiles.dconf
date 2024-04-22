@@ -70,6 +70,7 @@ cursor-blink-mode='off'
 cursor-colors-set=true
 cursor-foreground-color='#D95757'
 custom-command='/usr/bin/zsh'
+default-size-columns=80
 font='JetBrainsMono Nerd Font Medium 10.5'
 foreground-color='#BFBDB6'
 highlight-background-color='#BFBDB6'

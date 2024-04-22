@@ -21,7 +21,7 @@ bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+m exec --no-startup-id spotify
 bindsym $mod+shift+v exec --no-startup-id sudo /home/liamplm/programs/nekoray-3.26-2023-12-09-linux-x64.AppImage
 
-exec_always --no-startup-id dunst -startup_notification -conf /home/liamplm/.config/dunst/dunstrc
+exec_always --no-startup-id killall dunst && dunst -startup_notification -conf /home/liamplm/.config/dunst/dunstrc
 exec_always --no-startup-id /home/liamplm/.config/polybar/grayblocks/launch.sh
 
 focus_follows_mouse on
@@ -50,3 +50,6 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+b exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+k exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 hide_edge_borders smart
+
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/windows-server-2025-3840x2400-15386.jpg
+

@@ -20,11 +20,18 @@ word_wrap = yes
 ignore_newline = no
 stack_duplicates = false
 hide_duplicate_count = yes
-show_indicators = no
-icon_position = off
+show_indicators = yes
+
+icon_position = left
+icon_corner_radius = 5
+min_icon_size = 36
+max_icon_size = 36
+
+corner_radius = 8
+
 sticky_history = yes
 history_length = 20
-browser = /usr/bin/firefox -new-tab
+browser = /usr/bin/google-chrome
 always_run_script = true
 title = Dunst
 class = Dunst
@@ -43,12 +50,12 @@ frame_color = "#8bc34a"
 
 [urgency_normal]
 timeout = 8
-background = "#141c21"
+background = "#241c31"
 foreground = "#93a1a1"
 frame_color = "#ba68c8"
 
 [urgency_critical]
 timeout = 0
-background = "#141c21"
+background = "#441c21"
 foreground = "#93a1a1"
 frame_color = "#ff7043"

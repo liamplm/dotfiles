@@ -111,7 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH=/home/liamplm/programs/node-v20.9.0-linux-x64/bin:$PATH
+export PATH=/home/liamplm/programs/nwjs-v0.84.0-linux-x64:$PATH
+export PATH=/home/liamplm/programs/node-v20.14.0-linux-x64/bin:$PATH
 export PATH=$PATH:/home/liamplm/.platformio/penv/bin
 
 alias dl="aria2c -s16 -x16 -c"
@@ -158,7 +159,15 @@ export PATH="$GO_INSTALL/bin:$PATH"
 alias qr="qrencode -t ansiutf8"
 alias pn="ping 8.8.8.8"
 alias lstty="pio device list"
-alias sdate="date +%Y-%m-%d,%H:%M:%S"
+alias sdate="date +%Y-%m-%d_%H:%M:%S"
 alias lss="ls -lthr --sort size"
 
+alias cd_hw="cd ~/ws/robeex-drone-hardware"
+alias cd_hwp="cd ~/ws/robeex-drone-hardware/robeex-drone-esp32-rc-controller-idf"
+alias cd_web="cd ~/ws/robeex-drone-web-app"
+
 . "/home/liamplm/.acme.sh/acme.sh.env"
+
+
+# date format, hope no problems will occure
+export LC_TIME="en_US"

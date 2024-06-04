@@ -47,6 +47,24 @@ for _, lsp in ipairs(servers) do
 end
 
 lspconfig.angularls.setup {}
+lspconfig.clangd.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.signatureHelpProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+    cmd = {
+        "/home/liamplm/.local/share/nvim/mason/bin/clangd",
+        -- "-nostdlibinc",
+        "--enable-config",
+        "--background-index",
+        "--compile-commands-dir=./",
+        "--query-driver=/home/liamplm/.platformio/packages/**/bin/*",
+    },
+    -- settings = {
+    --     cmd = { "/home/liamplm/.local/share/nvim/mason/bin/clangd", "--query-driver=/home/liamplm/.platformio/packages/toolchain-xtensa-esp32s3/bin/xtensa-esp32s3*"}
+    -- }
+}
 
 lspconfig.lua_ls.setup {
     on_attach = on_attach,
@@ -74,8 +92,9 @@ local server_config = {
     filetypes = { "ino", "c", "cpp", "h", "hpp", "objc", "objcpp", "opencl" },
     root_dir = function(fname)
         return util.root_pattern ".ccls"(fname)
-            or util.root_pattern "build/compile_commands.json"(fname)
+            -- or util.root_pattern "build/compile_commands.json"(fname)
             or util.root_pattern "compile_commands.json"(fname)
+            or util.root_pattern(".ccls", "compile_commands.json")(fname)
             or util.root_pattern(".ccls", "compile_commands.json", "compile_flags.txt")(fname)
             or util.root_pattern "main.cpp"(fname)
             or util.find_git_ancestor(fname)
@@ -90,22 +109,22 @@ local server_config = {
             -- vim.fs.normalize "~/.cache/ccls" -- if on nvim 0.8 or higher
         },
         index = {
-            onChange = true
-        }
+            onChange = true,
+        },
     },
     on_attach = on_attach,
     capabilities = capabilities,
 }
-require("ccls").setup {
-    lsp = {
-        lspconfig = server_config,
-
-        codelens = {
-            enable = true,
-            events = { "BufWritePost", "InsertLeave" },
-        },
-    },
-}
+-- require("ccls").setup {
+--     lsp = {
+--         lspconfig = server_config,
+--
+--         codelens = {
+--             enable = true,
+--             events = { "BufWritePost", "InsertLeave" },
+--         },
+--     },
+-- }
 
 --
 -- lspconfig.pyright.setup { blabla}

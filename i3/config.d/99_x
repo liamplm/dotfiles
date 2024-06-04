@@ -2,6 +2,7 @@ for_window [title="Picture-in-Picture"] sticky enable
 
 assign [class="firefox"] 2
 assign [class="Google-chrome"] 2
+# assign [class="Brave"] 2
 assign [class="nekoray"] 3
 assign [class="TelegramDesktop"] 4
 assign [class="steam"] 8
@@ -15,7 +16,8 @@ floating_maximum_size 1250 x 700
 # open application launcher
 # bindsym $mod+d exec --no-startup-id ilia -p apps -t /usr/share/regolith-look/i3-default/ilia.css
 bindsym $mod+d exec --no-startup-id /home/liamplm/.config/polybar/grayblocks/scripts/launcher.sh
-bindsym $mod+g exec --no-startup-id google-chrome
+# bindsym $mod+g exec --no-startup-id google-chrome
+bindsym $mod+g exec --no-startup-id brave-browser
 bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+m exec --no-startup-id spotify
@@ -51,5 +53,5 @@ bindsym $mod+b exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+k exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 hide_edge_borders smart
 
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/windows-server-2025-3840x2400-15386.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/hoyoun-lee-wFUjcFocCv4-unsplash.jpg
 

@@ -161,13 +161,18 @@ alias pn="ping 8.8.8.8"
 alias lstty="pio device list"
 alias sdate="date +%Y-%m-%d_%H:%M:%S"
 alias lss="ls -lthr --sort size"
+alias rnet="sudo systemctl restart NetworkManager"
 
 alias cd_hw="cd ~/ws/robeex-drone-hardware"
 alias cd_hwp="cd ~/ws/robeex-drone-hardware/robeex-drone-esp32-rc-controller-idf"
+alias cd_px="cd ~/ws/PX4-Autopilot/"
+alias cd_pxm="cd ~/ws/PX4-Autopilot-modifications/"
 alias cd_web="cd ~/ws/robeex-drone-web-app"
+
+alias susp="sudo systemctl suspend"
 
 . "/home/liamplm/.acme.sh/acme.sh.env"
 
 
 # date format, hope no problems will occure
-export LC_TIME="en_US"
+# export LC_TIME="en_US"

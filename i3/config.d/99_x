@@ -5,8 +5,12 @@ assign [class="Google-chrome"] 2
 # assign [class="Brave"] 2
 assign [class="nekoray"] 3
 assign [class="TelegramDesktop"] 4
+
 assign [class="steam"] 8
+assign [class="Blocks"] 8
+
 assign [class="Spotify"] 9
+
 
 bindsym $mod+shift+n resize set width 680 px height 500 px
 # bindsym $mod+shift+n resize set width 600 px height 338 px
@@ -53,5 +57,5 @@ bindsym $mod+b exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+k exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 hide_edge_borders smart
 
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/hoyoun-lee-wFUjcFocCv4-unsplash.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper/philip-oroni-Kkg2viCy5vs-unsplash.jpg
 

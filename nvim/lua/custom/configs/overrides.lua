@@ -71,7 +71,7 @@ M.nvimtree = {
     view = {
         adaptive_size = false,
         side = "left",
-        width = 30,
+        width = 55,
         preserve_window_proportions = true,
     },
     git = {

@@ -73,9 +73,9 @@ local plugins = {
                     -- }
                 },
             },
-            extensions_list = { "themes", "terms", "ui-select" },
+            extensions_list = { "themes", "terms", "ui-select", "undo" },
         },
-		lazy = false
+        lazy = false,
     },
     {
         "christoomey/vim-tmux-navigator",

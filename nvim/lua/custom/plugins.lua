@@ -8,6 +8,7 @@ local plugins = {
         dependencies = {
             { "nvim-treesitter/nvim-treesitter" },
             { "nvim-telescope/telescope-ui-select.nvim" },
+            { "debugloop/telescope-undo.nvim" },
         },
         opts = {
             extensions = {

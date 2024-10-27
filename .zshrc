@@ -150,6 +150,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export CAPACITOR_ANDROID_STUDIO_PATH=/snap/bin/android-studio
 
+export ANDROID_TOOLS=/home/liamplm/Android/Sdk/platform-tools/
+export PATH="$ANDROID_TOOLS:$PATH"
+
 export MASON="$HOME/.local/share/nvim/mason"
 export PATH="$MASON/bin:$PATH"
 
@@ -168,8 +171,12 @@ alias cd_hwp="cd ~/ws/robeex-drone-hardware/robeex-drone-esp32-rc-controller-idf
 alias cd_px="cd ~/ws/PX4-Autopilot/"
 alias cd_pxm="cd ~/ws/PX4-Autopilot-modifications/"
 alias cd_web="cd ~/ws/robeex-drone-web-app"
+alias cd_mp="cd ~/ws/robeex-management-panel"
+alias cd_api="cd ~/ws/robeex-drone-api"
 
 alias susp="sudo systemctl suspend"
+
+alias cls="clear"
 
 . "/home/liamplm/.acme.sh/acme.sh.env"
 

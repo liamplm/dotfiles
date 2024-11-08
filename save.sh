@@ -21,6 +21,7 @@ cp ~/.tmux.conf .
 
 # ZSH
 cp ~/.zshrc .
+cp ~/.p10k.zsh .
 
 # Dunst
 cp ~/.config/dunst/dunstrc .

@@ -6,7 +6,7 @@ M.treesitter = {
         "javascript",
         "jsdoc",
         "typescript",
-        "help",
+        -- "help",
         "c",
         "cpp",
         "html",
@@ -16,7 +16,9 @@ M.treesitter = {
         "json",
         "yaml",
         "regex",
+        "embedded_template"
     },
+    embedded_template = { enable = true, },
     highlight = {
         enable = true,
         use_languagetree = true,

@@ -1,4 +1,17 @@
 local overrides = require "custom.configs.overrides"
+-- local lvim = require "lvim"
+-- lvim.builtin.treesitter.on_config_done = function()
+--     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+--     parser_config.ejs = {
+--       install_info = {
+--         url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+--         files = { "src/parser.c" },
+--         requires_generate_from_grammar = true,
+--       },
+--       filetype = "ejs",
+--     }
+-- end
+
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -29,13 +42,22 @@ local plugins = {
     },
     {
         "chrisgrieser/nvim-spider",
+        config = function ()
+            -- default values
+            require("spider").setup {
+                skipInsignificantPunctuation = false,
+                consistentOperatorPending = false, -- see "Consistent Operator-pending Mode" in the README
+                subwordMovement = true,
+                customPatterns = {}, -- check "Custom Movement Patterns" in the README for details
+            }
+        end,
         lazy = true,
         keys = {
-            {
-                "e",
-                "<cmd>lua require('spider').motion('e')<CR>",
-                mode = { "n", "o", "x" },
-            },
+            -- {
+            --     "e",
+            --     "<cmd>lua require('spider').motion('e')<CR>",
+            --     mode = { "n", "o", "x" },
+            -- },
             {
                 "w",
                 "<cmd>lua require('spider').motion('w')<CR>",
@@ -111,10 +133,11 @@ local plugins = {
         opts = overrides.mason,
     },
 
-    -- {
-    --   "nvim-treesitter/nvim-treesitter",
-    --   opts = overrides.treesitter,
-    -- },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = overrides.treesitter,
+    },
+
     {
         "nvim-tree/nvim-tree.lua",
         opts = overrides.nvimtree,
@@ -142,6 +165,18 @@ local plugins = {
     --   "mg979/vim-visual-multi",
     --   lazy = false,
     -- }
+}
+
+
+-- npm install -g tree-sitter-cli
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.ejs = {
+    install_info = {
+        url = "https://github.com/tree-sitter/tree-sitter-embedded-template",
+        files = { "src/parser.c" },
+        requires_generate_from_grammar = true,
+    },
+    filetype = "ejs",
 }
 
 return plugins

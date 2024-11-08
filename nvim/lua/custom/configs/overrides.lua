@@ -36,14 +36,31 @@ M.mason = {
         "css-lsp",
         "html-lsp",
         "typescript-language-server",
-        -- "deno",
+        "angular-language-server",
+        "stylua",
+        "tailwindcss-language-server",
         "emmet-ls",
         "json-lsp",
+        -- "deno",
 
         -- shell
         "shfmt",
-        "shellcheck",
+
+        -- python
         "pyright",
+
+        -- cpp
+        "clang-format",
+        "clangd",
+
+        -- rust
+        "rust-analyzer",
+
+        -- general
+        "docker-compose-language-ser",
+        "editorconfig-checker",
+        "prettierd",
+        "shellcheck",
     },
 }
 

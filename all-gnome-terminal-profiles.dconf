@@ -5,7 +5,7 @@ list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'ec9cfc03-11da-4c9f-9b29-263a2f473
 [:bd9a3663-14e1-4286-ab36-58a4ad5bfe36]
 audible-bell=false
 background-color='#282828'
-background-transparency-percent=0
+background-transparency-percent=4
 bold-color='#458588'
 bold-color-same-as-fg=false
 bold-is-bright=false

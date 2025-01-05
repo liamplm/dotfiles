@@ -7,7 +7,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- if you just want default config for the servers then put them in a table
 -- local servers = { "html", "cssls", "tsserver", "clangd" }
 local servers = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "pyright",
@@ -54,12 +54,12 @@ lspconfig.clangd.setup {
     end,
     capabilities = capabilities,
     cmd = {
-        "/home/liamplm/.local/share/nvim/mason/bin/clangd",
+        "/home/mpx/.local/share/nvim/mason/bin/clangd",
         -- "-nostdlibinc",
         "--enable-config",
         "--background-index",
         "--compile-commands-dir=./",
-        "--query-driver=/home/liamplm/.platformio/packages/**/bin/*",
+        -- "--query-driver=/home/liamplm/.platformio/packages/**/bin/*",
     },
     -- settings = {
     --     cmd = { "/home/liamplm/.local/share/nvim/mason/bin/clangd", "--query-driver=/home/liamplm/.platformio/packages/toolchain-xtensa-esp32s3/bin/xtensa-esp32s3*"}

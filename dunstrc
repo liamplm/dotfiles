@@ -1,7 +1,11 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "300x60-20+48"
+# geometry = "300x60-20+48"
+width = 300 
+height = 60 
+origin = top-right
+offset = 48x48
 indicate_hidden = yes
 shrink = no
 separator_height = 0
@@ -36,7 +40,6 @@ always_run_script = true
 title = Dunst
 class = Dunst
 
-[shortcuts]
 close = ctrl+space
 close_all = ctrl+shift+space
 history = ctrl+grave

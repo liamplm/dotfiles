@@ -89,6 +89,8 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+export EDITOR=nvim 
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -111,21 +113,21 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH=/home/liamplm/programs/nwjs-v0.84.0-linux-x64:$PATH
-export PATH=/home/liamplm/programs/node-v20.14.0-linux-x64/bin:$PATH
-export PATH=$PATH:/home/liamplm/.platformio/penv/bin
+export PATH=/home/mpx/programs/nwjs-v0.84.0-linux-x64:$PATH
+export PATH=/home/mpx/programs/node-v20.14.0-linux-x64/bin:$PATH
+export PATH=$PATH:/home/mpx/.platformio/penv/bin
 
 alias dl="aria2c -s16 -x16 -c"
 alias pio="platformio"
 
-export PNPM_HOME="/home/liamplm/.local/share/pnpm"
+export PNPM_HOME="/home/mpx/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-source <(ng completion script)
+#source <(ng completion script)
 
-source "$HOME/.cargo/env"
+#source "$HOME/.cargo/env"
 
 ###-begin-ionic-completion-###
 
@@ -143,14 +145,14 @@ alias npm="pnpm"
 
 
 # bun completions
-[ -s "/home/liamplm/.bun/_bun" ] && source "/home/liamplm/.bun/_bun"
+[ -s "/home/mpx/.bun/_bun" ] && source "/home/mpx/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export CAPACITOR_ANDROID_STUDIO_PATH=/snap/bin/android-studio
 
-export ANDROID_TOOLS=/home/liamplm/Android/Sdk/platform-tools/
+export ANDROID_TOOLS=/home/mpx/Android/Sdk/platform-tools/
 export PATH="$ANDROID_TOOLS:$PATH"
 
 export MASON="$HOME/.local/share/nvim/mason"
@@ -166,20 +168,30 @@ alias sdate="date +%Y-%m-%d_%H:%M:%S"
 alias lss="ls -lthr --sort size"
 alias rnet="sudo systemctl restart NetworkManager"
 
-alias cd_hw="cd ~/ws/robeex-drone-hardware"
-alias cd_hwp="cd ~/ws/robeex-drone-hardware/robeex-drone-esp32-rc-controller-idf"
-alias cd_px="cd ~/ws/PX4-Autopilot/"
-alias cd_pxm="cd ~/ws/PX4-Autopilot-modifications/"
+# alias cd_hw="cd ~/ws/robeex-drone-hardware"
+alias cd_hwp="cd ~/ws/robeex-drone-esp32-rc-controller-idf"
+alias cd_px="cd ~/ws/px4-autopilot/"
+alias cd_pxm="cd ~/ws/px4-autopilot-modifications/"
 alias cd_web="cd ~/ws/robeex-drone-web-app"
 alias cd_mp="cd ~/ws/robeex-management-panel"
-alias cd_api="cd ~/ws/robeex-drone-api"
+alias cd_api="cd ~/ws/robeex-api"
 
 alias susp="sudo systemctl suspend"
 
 alias cls="clear"
 
-. "/home/liamplm/.acme.sh/acme.sh.env"
+#. "/home/mpx/.acme.sh/acme.sh.env"
 
 
 # date format, hope no problems will occure
 # export LC_TIME="en_US"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH=/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
+
+# Created by `pipx` on 2024-11-09 15:44:43
+export PATH="$PATH:/home/mpx/.local/bin"

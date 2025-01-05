@@ -7,7 +7,10 @@ assign [class="nekoray"] 3
 assign [class="TelegramDesktop"] 4
 
 assign [class="steam"] 8
-assign [class="Blocks"] 8
+assign [class="dota2"] 8
+# assign [class="Blocks"] 8
+# assign [class="AirSimNH"] 8
+# assign [class="Gazebo GUI"] 8
 
 assign [class="Spotify"] 9
 
@@ -15,20 +18,23 @@ assign [class="Spotify"] 9
 bindsym $mod+shift+n resize set width 680 px height 500 px
 # bindsym $mod+shift+n resize set width 600 px height 338 px
 # bindsym $mod+shift+n resize set width 416 px height 305 px
-floating_maximum_size 1920 x 1024
+# floating_maximum_size 1920 x 1024
+floating_maximum_size 2500 x 1300
 
 # open application launcher
 # bindsym $mod+d exec --no-startup-id ilia -p apps -t /usr/share/regolith-look/i3-default/ilia.css
-bindsym $mod+d exec --no-startup-id /home/liamplm/.config/polybar/grayblocks/scripts/launcher.sh
+bindsym $mod+d exec --no-startup-id /home/mpx/.config/polybar/grayblocks/scripts/launcher.sh
 bindsym $mod+g exec --no-startup-id google-chrome
 # bindsym $mod+g exec --no-startup-id brave-browser
 bindsym $mod+t exec --no-startup-id telegram-desktop
 bindsym $mod+n exec --no-startup-id nautilus
 bindsym $mod+m exec --no-startup-id spotify
-bindsym $mod+shift+v exec --no-startup-id sudo /home/liamplm/programs/nekoray-3.26-2023-12-09-linux-x64.AppImage
+# bindsym $mod+shift+v exec --no-startup-id sudo /home/mpx/programs/nekoray-3.26-2023-12-09-linux-x64.AppImage
+bindsym $mod+shift+v exec --no-startup-id sudo /home/mpx/ws/scripts/launch-nekoray.sh
 
-exec_always --no-startup-id killall dunst && dunst -startup_notification -conf /home/liamplm/.config/dunst/dunstrc
-exec_always --no-startup-id /home/liamplm/.config/polybar/grayblocks/launch.sh
+exec_always --no-startup-id /home/mpx/ws/scripts/launch-dunst.sh
+exec_always --no-startup-id /home/mpx/.config/polybar/grayblocks/launch.sh
+exec_always --no-startup-id /home/mpx/programs/legion-kb-rgb load-profile --path /home/mpx/kb-rgb-profiles/static-y
 
 focus_follows_mouse on
 

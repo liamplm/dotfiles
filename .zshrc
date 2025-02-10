@@ -195,3 +195,5 @@ export PATH=/opt/gcc-arm-none-eabi-9-2020-q2-update/bin:$PATH
 
 # Created by `pipx` on 2024-11-09 15:44:43
 export PATH="$PATH:/home/mpx/.local/bin"
+
+export JAVA_HOME=/snap/android-studio/161/jbr

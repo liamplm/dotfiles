@@ -1,5 +1,5 @@
 [/]
-audible-bell=true
+audible-bell=false
 background-color='#0B0E14'
 background-transparency-percent=0
 bold-color='rgb(33,88,145)'
@@ -11,7 +11,7 @@ cursor-colors-set=true
 cursor-foreground-color='#D95757'
 custom-command='/usr/bin/zsh'
 default-size-columns=80
-font='JetBrainsMono Nerd Font Medium 10.5'
+font='JetBrainsMono Nerd Font 11'
 foreground-color='#BFBDB6'
 highlight-background-color='#BFBDB6'
 highlight-colors-set=true
@@ -19,6 +19,7 @@ highlight-foreground-color='#0B0E14'
 login-shell=false
 palette=['rgb(11,14,20)', 'rgb(217,87,87)', 'rgb(170,217,76)', 'rgb(230,180,80)', 'rgb(79,129,180)', 'rgb(108,89,128)', 'rgb(149,230,203)', 'rgb(191,189,182)', 'rgb(191,189,182)', 'rgb(240,113,120)', 'rgb(127,217,98)', 'rgb(255,180,84)', 'rgb(115,184,255)', 'rgb(210,166,255)', 'rgb(149,230,203)', 'rgb(13,16,23)']
 scrollbar-policy='never'
+text-blink-mode='always'
 use-custom-command=true
 use-system-font=false
 use-theme-colors=false
